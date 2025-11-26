@@ -1,0 +1,102 @@
+:root{
+    --brand:#f2a340;
+    --brand-dark:#c28008;
+    --muted:#757575;
+    --bg-dark:#353e38;
+    --max-width:1100px;
+}
+
+/* Box sizing and base */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{
+    font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size:16px;
+    line-height:1.45;
+    color:#222;
+    min-height:100vh;
+    padding-bottom:120px; /* space for footer */
+    background:#fff;
+}
+
+/* Headings */
+h1{color:var(--brand);font-weight:700;margin:0 0 1rem}
+h2,h3{color:#222}
+
+/* Header / navbar */
+header{background:#fff;border-bottom:1px solid #e9e9e9}
+#navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:var(--max-width);margin:0 auto}
+#navbar img{height:44px}
+#navbar .navbar-nav{display:flex;gap:10px;align-items:center}
+#navbar a{font-size:0.95rem;color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px}
+#navbar a:hover{color:var(--brand)}
+
+/* Container tweaks */
+.container-fluid{padding:0 16px}
+.row{margin:0}
+.container-centered{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+/* Alerts (work well with Bootstrap) */
+.alert{max-width:var(--max-width);margin:16px auto}
+
+/* Forms */
+.form-group{margin-bottom:12px}
+label{font-weight:600}
+input[type="text"],input[type="date"],select,textarea{border:1px solid #ddd;padding:10px;border-radius:6px;width:100%;font-size:0.95rem}
+textarea{min-height:110px}
+.is-invalid{border-color:#dc3545}
+.invalid-feedback{display:block;color:#dc3545;margin-top:6px}
+
+/* Buttons */
+.btn-primary{background:var(--brand);border:1px solid var(--brand-dark);color:#fff;padding:8px 14px;border-radius:8px}
+.btn-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.btn-danger{background:#d9534f;border-color:#d43f3a;color:#fff}
+
+/* Events area */
+#events-container{padding:36px 16px}
+#cards-container{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+#cards-container .card{flex:1 1 calc(33.333% - 12px);max-width:calc(33.333% - 12px);border-radius:10px;padding:0;margin:0;background:#fff;border:1px solid #eee}
+#cards-container .card img{width:100%;height:180px;object-fit:cover;border-top-left-radius:10px;border-top-right-radius:10px}
+.card .card-title{font-size:1.05rem;margin:12px}
+.card .card-body{padding:12px}
+
+@media (max-width:900px){
+    #cards-container .card{flex:1 1 calc(50% - 12px);max-width:calc(50% - 12px)}
+}
+@media (max-width:600px){
+    #cards-container .card{flex:1 1 100%;max-width:100%}
+    #navbar{padding:10px}
+}
+
+/* Image / info page */
+#image-container img{border-radius:10px;max-width:100%;height:auto}
+#info-container{padding:18px}
+#info-container h1{font-size:1.6rem}
+
+#items-list{list-style:none;padding-left:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+#items-list li{background:#f7f7f7;padding:6px 10px;border-radius:6px}
+
+/* Dashboard table */
+.dashboard-title-container{margin:20px 0}
+.dashboard-events-container table{width:100%}
+.dashboard-events-container th{width:25%}
+.dashboard-events-container td{vertical-align:middle;padding:14px 8px !important}
+.dashboard-events-container tr{display:table-row}
+.dashboard-events-container form{display:inline-block;margin-right:8px}
+.dashboard-events-container .btn{padding:6px 10px;font-size:0.9rem;white-space:nowrap}
+.dashboard-events-container ion-icon{margin-right:4px}
+
+/* Footer (sticky-ish but not overlapping) */
+footer{background:var(--bg-dark);color:#fff;padding:28px 16px;margin-top:40px}
+footer p{margin:6px 0; text-align:center}
+.footer-links{display:flex;gap:18px;justify-content:center;margin-bottom:10px}
+.footer-links a{color:#fff;text-decoration:none}
+
+/* Image preview in edit */
+.img-preview{width:100px;margin:12px;border-radius:6px;object-fit:cover}
+
+/* Small helpers */
+.muted{color:var(--muted)}
+
+/* Keep legacy .msg for backward compatibility */
+.msg{background-color:#d4edda;color:#155724;border:1px solid #c3e6cb;width:100%;margin-bottom:0;text-align:center;padding:10px}
